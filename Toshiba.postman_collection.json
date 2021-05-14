@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "3be2b016-4012-4cca-99a8-095f1ea72329",
+		"name": "Toshiba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Prizes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/prize/",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"prize",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/admin/customer?limit=1&page=3&sorting=full_name desc",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"admin",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "3"
+						},
+						{
+							"key": "sorting",
+							"value": "full_name desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"0070111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lw}}/api/customer",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Play",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lw}}/api/wheel/",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"wheel",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Histories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/api/admin/history?sorting=created_at desc&limit=1&date_from=2020-12-25",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"history"
+					],
+					"query": [
+						{
+							"key": "sorting",
+							"value": "created_at desc"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "date_from",
+							"value": "2020-12-25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List User Histories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/api/history?customer_id=3",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"history"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Tân",
+							"disabled": true
+						},
+						{
+							"key": "customer_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/api/admin/history/download?sorting=created_at%20desc",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"history",
+						"download"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Abc",
+							"disabled": true
+						},
+						{
+							"key": "sorting",
+							"value": "created_at%20desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Week Prize",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{lw}}/api/week-prize",
+					"host": [
+						"{{lw}}"
+					],
+					"path": [
+						"api",
+						"week-prize"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,5147 @@
+{
+	"info": {
+		"_postman_id": "194e5256-d7cb-4cde-b7c0-d2fe862a15c5",
+		"name": "HonorU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"quoccuong123@gmail.com\",\n\t\"pass\": \"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"authenticate"
+							]
+						},
+						"description": "BODY\n\n---\n\n| **Field**  | **Required** | **Type** | **Description**    | **Default Value** |\n|----------|:----------:|--------|------------------|-----------------|\n| username |       *     | String | Account username |                 |\n| pass     |       *     | String | Account password |                 |\n|device_name|*|String|Name of device used to login|\n|device_token|*|String|Token of device that will be used to push notification|"
+					},
+					"response": [
+						{
+							"name": "Login successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"tanhp1506@gmail.com\",\n\t\"pass\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:50000/user/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"user",
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "551"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"227-DsRQukwZgCb3ZcA1vh0Vi3fyCX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Mar 2020 04:40:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"tanhp1506@gmail.com\",\n        \"email\": \"tanhp1506@gmail.com\",\n        \"first_name\": \"tan\",\n        \"last_name\": \"huynh\",\n        \"phone\": null,\n        \"gender\": null,\n        \"dob\": null,\n        \"user_status\": \"active\",\n        \"role_id\": 2,\n        \"created_at\": \"2020-03-11T06:50:00.000Z\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTgzOTg4MDUyLCJleHAiOjE1ODY1ODAwNTJ9.iSIreua0daYGUOn0RkrU6rDHWwSNdQ_1WXxwTVkzQOI\",\n    \"refresh_token\": \"806ddfc1352e46d19d1692a5bda0d1c0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login With Facebook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"access_token\": \"EAAky3MzX8GEBAOIKj8ZAxTIw6tdtkhZBCJ9cpYwlldRyyc9ZCQzfeODQvNkg1e66p6tmHq6xQvvZAZAE6gZANeARHkCT51SWBY8BeCd1eDIbjHw2p3JWAEppbZBbla4eDSufg1628ymN2dgmhZBZCkwBS5zuuyfPBZBCZCwXdgfnDEDrglpcE6zbbjU5aQKezQ1aFeIMQKsL6S1RASjj9qyZAwo3Hym8skv59ZBAZD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://usw2-develop-honoru.api.dentaldate.com/user/authenticate",
+							"protocol": "https",
+							"host": [
+								"usw2-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"user",
+								"authenticate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"tanhp1506@gmail.com\",\n\t\"pass\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:50000/user/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"user",
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "551"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"227-DsRQukwZgCb3ZcA1vh0Vi3fyCX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Mar 2020 04:40:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"tanhp1506@gmail.com\",\n        \"email\": \"tanhp1506@gmail.com\",\n        \"first_name\": \"tan\",\n        \"last_name\": \"huynh\",\n        \"phone\": null,\n        \"gender\": null,\n        \"dob\": null,\n        \"user_status\": \"active\",\n        \"role_id\": 2,\n        \"created_at\": \"2020-03-11T06:50:00.000Z\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTgzOTg4MDUyLCJleHAiOjE1ODY1ODAwNTJ9.iSIreua0daYGUOn0RkrU6rDHWwSNdQ_1WXxwTVkzQOI\",\n    \"refresh_token\": \"806ddfc1352e46d19d1692a5bda0d1c0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzLCJ1c2VybmFtZSI6ImhhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MDE0MDg4NSwiZXhwIjoxNTkyNzMyODg1fQ.9DqWUfwg52XAxbCcFDtFav1qqLpAEwqCueF3c5u432o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"refresh_token\": \"338d080814c9affe71be055ac952cfde\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"logout"
+							]
+						},
+						"description": "BODY\n\n---\n\n| **Field**  | **Required** | **Type** | **Description**    | **Default Value** |\n|----------|:----------:|--------|------------------|-----------------|\n|refresh_token|*|String|Refresh Token|"
+					},
+					"response": [
+						{
+							"name": "Login successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"tanhp1506@gmail.com\",\n\t\"pass\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:50000/user/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"user",
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "551"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"227-DsRQukwZgCb3ZcA1vh0Vi3fyCX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Mar 2020 04:40:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"tanhp1506@gmail.com\",\n        \"email\": \"tanhp1506@gmail.com\",\n        \"first_name\": \"tan\",\n        \"last_name\": \"huynh\",\n        \"phone\": null,\n        \"gender\": null,\n        \"dob\": null,\n        \"user_status\": \"active\",\n        \"role_id\": 2,\n        \"created_at\": \"2020-03-11T06:50:00.000Z\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTgzOTg4MDUyLCJleHAiOjE1ODY1ODAwNTJ9.iSIreua0daYGUOn0RkrU6rDHWwSNdQ_1WXxwTVkzQOI\",\n    \"refresh_token\": \"806ddfc1352e46d19d1692a5bda0d1c0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Invite friends with email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"emails\": [\"tanhp1506@gmail.com\", \"tanhp1506.work@gmail.com\"],\n\t\"email_config\": {\n\t\t\"subject\": \"Hello world\",\n\t\t\"html\": \"ble\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/invite",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"invite"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|emails|*|Array of email|Email of friends|\n|email_config|*|Object<ul><li>subject</li><li>html</li></ul>|Config of email\n|-----> subject| |String|Subject of email|Invitation\n|-----> html|*|String`<HTML>`|Body of mail|"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"tanhp1506@gmail.com\",\n\t\"mail_cfg\": {\n\t\t\"subject\": \"Forgot Password\",\n\t\t\"html\": \"Use this to reset password: %verify_string%\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/forgot-password",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"forgot-password"
+							]
+						},
+						"description": "This API will send a verify string used for Reset Password API thru email that you provided.\nWhen you pass HTML code to `html` key in `mail_cfg` param, you need to put `%verify_string%` format key inside the HTML code. Thru the format key, server will generate a hash string then replaces with the format key. See body example for clear.\n\nBODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|email |* |String |Email to send verify_string used for Reset Password API|\n|mail_cfg| |Object<ul><li>subject`<string>`</li><li>html`<string>`</li></ul>|To config mailer after performing action|"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"new_password\": \"123456\",\n\t\"verify_string\": \"106706\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/reset-password",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"reset-password"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|verify_string |* |String |Verify string got from email sent from Forgot Password API|\n|new_password |* |String |New password |"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEwLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NTkxNTk2OSwiZXhwIjoxNTk4NTA3OTY5fQ.kr3agUBLrVbRG_MWowKVpYdX_AGfGmYXYUpO7qS3C1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"old_password\": \"111111\",\n\t\"new_password\": \"222222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/user/change-password",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|old_password |* |String |Old password |\n|new_password |* |String |New password |"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjEwNzAzMCwiZXhwIjoxNTk4Njk5MDMwfQ.H0qWglOCk-1hna_ka8JODEOb6VDavYMtG90dAuKlUDk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"fcfe62224aa4de4686590c976fa8bec4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/refresh-token",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsInVzZXJuYW1lIjoiamVmZnRkdXJhbkBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTgwODc1MDIsImV4cCI6MTYwMDY3OTUwMn0.vmOp6yWsBHYxGkNUiBCG_kw_fcnbXQWtnijp_rCDDZw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/user/list?user_status=active&recommended=1&limit=1000",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"list"
+							],
+							"query": [
+								{
+									"key": "user_status",
+									"value": "active"
+								},
+								{
+									"key": "context_search",
+									"value": "q",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "75",
+									"disabled": true
+								},
+								{
+									"key": "recommended",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1000"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n| **Field**        | **Required** | **Type**                    | **Description**                                                                                      | **Default Value** |\n|----------------|:----------:|---------------------------|----------------------------------------------------------------------------------------------------|-----------------|\n| id             |            | Array of Number or Number | Search by id                                                                                       |                 |\n| exclude_id     |            | Array of Number of Number | Search omit id                                                                                     |                 |\n| order_by       |            | String                    | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `last_name-asc`                         |                 |\n| limit          |            | Number                    | Define number of record per page.                                                                  |                 |\n| page           |            | Number                    | Define page to query                                                                               |                 |\n| user_status    |      *     | Array of String or String | Search by status. If empty, list will return nothing Accepted value: `all`, `active`, `pending`, `locked` |                 |\n| context_search |            | String                    | Search by first name or last name or username. This is ignored if `username` is defined in query   |                 |\n| username       |            | String                    | Search by username. This is ignored if `context_search` is defined in query                        |                 |\n| phone          |            | String                    | Search by phone number                                                                             |                 |\n| email          |            | String                    | Search by email                                                                                    |                 |\n| gender         |            | String                    | Search by gender Accepted value: `male`, `female`                                                  |                 |\n| role_id        |            | Array of Number or Number | Search by role id                                                                                  |                 |\n| or_search      |            | Object                    | Search by multiple fields with `OR` operation. Example: `{username: \"Ozawa\", last_name: \"Tokuda\"}` |                 |"
+					},
+					"response": []
+				},
+				{
+					"name": "View User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NzIwODI5MCwiZXhwIjoxNTk5ODAwMjkwfQ.fiIKxCIeK_ZgnJHjkuIiQwH8Jk66GfL8HhMSwhnTFWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/user/view/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"view",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "171",
+									"type": "string",
+									"description": "Id of User"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"la@gmail.com\",\n\t\"email\": \"la@gmail.com\",\n\t\"full_name\": \"Sanggggggggg\",\n\t\"pass\": \"111111\",\n\t\"user_status\": \"active\",\n\t\"national_code_id\": 12,\n\t\"avatar_id\": 1,\n\t\"media\": [1,2,20],\n\t\"role_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/add/",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"add",
+								""
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|username|*|String|Username should be an email or phone number **(with contry code)**\n|pass |* |String |Define password of User | |\n|email | |String |Define email of User. This is also `username` | |\n|first_name |* |String |First name of User | |\n|last_name |* |String |Last name of User | |\n|phone | |String |Phone number of User | |\n|gender | |String |Gender of User: `male`, `female` | |\n|dob | |String |Day of birth. Based on format `YYYY-MM-DD`| |\n|user_status |* |String |Status of User: `active`, `pending`, `locked` | |\n|role_id |* |Number |Id of Role | |"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjE2Nzg5NiwiZXhwIjoxNTk4NzU5ODk2fQ.NKm0db_nsO71Udhy-HaQ0i_QfbfPXwbD_OhbahCKnSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"asgdhajsd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/edit/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"edit",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "171",
+									"type": "string",
+									"description": "Id of User"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|first_name | |String |First name of User | |\n|last_name | |String |Last name of User | |\n|phone | |String |Phone number of User | |\n|gender | |String |Gender of User: `male`, `female` | |\n|dob | |String |Day of birth. Based on format `YYYY-MM-DD`| |\n|user_status | |String |Status of User: `active`, `pending`, `locked` | |"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTgzOTg4MDUyLCJleHAiOjE1ODY1ODAwNTJ9.iSIreua0daYGUOn0RkrU6rDHWwSNdQ_1WXxwTVkzQOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/user/remove/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"remove",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "",
+									"type": "string",
+									"description": "Id of User"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY1LCJ1c2VybmFtZSI6ImNhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MTU5OTMyNywiZXhwIjoxNTk0MTkxMzI3fQ.T0Z2fHs2hOHzcU7NQCpq36MNF2R-Pzo91N0cA5Zlom0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"background_id\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/user/patch",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"patch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDcwMDE2NywiZXhwIjoxNTk3MjkyMTY3fQ.8Qa4JeaX4BKjAKxF1ASOodvWTEBLqVR26QzpKtiVQlk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/user/statistic?period=monthly&date_end=2020-07-07",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"user",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "monthly"
+								},
+								{
+									"key": "date_end",
+									"value": "2020-07-07"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relationship",
+			"item": [
+				{
+					"name": "List Relationships",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5Mzc2NDQ5NiwiZXhwIjoxNTk2MzU2NDk2fQ.Fte2U_EQv3Y91mRb__MOs82pxDcWtzKv0eo7YwDur7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/relationship/list/168?type=friend",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"list",
+								"168"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "friend"
+								},
+								{
+									"key": "status",
+									"value": "all",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n| **Field**        | **Required** | **Type**                    | **Description**                                                                                      | **Default Value** |\n|----------------|:----------:|---------------------------|----------------------------------------------------------------------------------------------------|-----------------|\n|user_id| |Number| Search by User Id|\n| friend_id             |            | Array of Number or Number | Search by friend id                                                                                       |                 |\n|type| |String| Define this with value = `list-invitation` if you want to get list of invitation|\n| order_by       |            | String                    | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `last_name-asc`                         |                 |\n| limit          |            | Number                    | Define number of record per page.                                                                  |                 |\n| page           |            | Number                    | Define page to query                                                                               |                 |\n| context_search |            | String                    | Search by first name or last name or username. This is ignored if `username` is defined in query   |                 |\n| username       |            | String                    | Search by username. This is ignored if `context_search` is defined in query                        |                 |\n| phone          |            | String                    | Search by phone number                                                                             |                 |\n| email          |            | String                    | Search by email                                                                                    |                 |\n| gender         |            | String                    | Search by gender Accepted value: `male`, `female`                                                  |                 |"
+					},
+					"response": []
+				},
+				{
+					"name": "View Relationship",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VyMkBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1ODk5MzM4NzEsImV4cCI6MTU5MjUyNTg3MX0.0EqduzKRkWXpQ_zYxldqk8OogQqd4ZEJ5dSQ5NoIsXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/relationship/view/:friend_id",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"view",
+								":friend_id"
+							],
+							"variable": [
+								{
+									"key": "friend_id",
+									"value": "2",
+									"type": "string",
+									"description": "Id of Friend"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add relationship",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjA4LCJ1c2VybmFtZSI6InF1b2NjdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTc5ODM2MDgsImV4cCI6MTYwMDU3NTYwOH0.fNDUQsQyUwH18jF44Z0Btg5m2jTlJfPK-FhEPEM07f8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"relation_type\": \"friend\",\n\t\"friend_id\": [182]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/relationship/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|friend_id |* |Array of Number |Ids of User |\n|relation_type |* |String |Type of relationship |\n|mail_cfg| |Object<ul><li>subject`<string>`</li><li>html`<string>`</li></ul>|To config mailer after performing action|"
+					},
+					"response": []
+				},
+				{
+					"name": "Reject",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgxLCJ1c2VybmFtZSI6ImFubmd1eWVuZGluaHF1b2MxMTlAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTk3OTk4NjE4LCJleHAiOjE2MDA1OTA2MTh9.DwLFCyPk24UiWLiR3VE8srK2Nx45xhZYrJ2_bxTAmPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"friend_id\": 208\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/relationship/accept",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"accept"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|friend_id |* |Number |Id of User |\n|mail_cfg| |Object<ul><li>subject`<string>`</li><li>html`<string>`</li></ul>|To config mailer after performing action|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Relationship",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTgzOTg4MDUyLCJleHAiOjE1ODY1ODAwNTJ9.iSIreua0daYGUOn0RkrU6rDHWwSNdQ_1WXxwTVkzQOI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"friend_id\": 2,\n\t\"relation_type\": \"r\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/relationship/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"edit"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|friend_id |* |String |Id of User |\n|relation_type |* |String |Type of relationship |"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Relationship",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzLCJ1c2VybmFtZSI6Im5hQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MzE0ODg0NywiZXhwIjoxNTk1NzQwODQ3fQ.4IoQwzqwcN6XPLlC4yTMRnVrcxVmU8DO4kj5UfSfKFU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/relationship/remove?friend_id=168",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "friend_id",
+									"value": "168"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|friend_id |* |String |Id of User |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get mutual friends",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDQ2NDcwNCwiZXhwIjoxNTk3MDU2NzA0fQ.__SuWO13Q9VvJkU26BcZIHDduVrdiFgZ14eMC3Z8JNA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/relationship/mutual/163",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"mutual",
+								"163"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "See Friendship",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDE0MzkyMSwiZXhwIjoxNTk2NzM1OTIxfQ.e2qIh6NW0aqqK47POYnef5Q4USySYL7AW8V1lHrrLWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/relationship/friendship/75",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"friendship",
+								"75"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "New Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoidGFuaHAxNTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NjgyODcxNywiZXhwIjoxNTg5NDIwNzE3fQ.g73rTKM1Fhmw9mdkoBE-L-n2y9e1dU5vTysOkUU_t-E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://usw2-develop-honoru.api.dentaldate.com/question/new-feed",
+							"protocol": "https",
+							"host": [
+								"usw2-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"question",
+								"new-feed"
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Require**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n|limit| |Number|Number of record per page|20\n|page| |Number|Page|1"
+					},
+					"response": [
+						{
+							"name": "New Feed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/question/new-feed?limit=1",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"question",
+										"new-feed"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "721"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d1-8Eg17r0dxKdncaqq5W7eQM58KT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Mar 2020 08:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 29,\n        \"rows\": [\n            {\n                \"id\": 33,\n                \"user_id\": 6,\n                \"post_content\": \"Bao nhieu tien mot cai nia?\",\n                \"post_status\": \"publish\",\n                \"created_at\": \"2020-03-19T06:21:26.000Z\",\n                \"updated_at\": null,\n                \"full_name\": \"Bang Tran\",\n                \"media\": [\n                    {\n                        \"id\": 30,\n                        \"user_id\": 1,\n                        \"media_attachment\": {\n                            \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                            \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                        },\n                        \"media_type\": \"image\",\n                        \"media_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                        \"updated_at\": null\n                    },\n                    {\n                        \"id\": 29,\n                        \"user_id\": 1,\n                        \"media_attachment\": null,\n                        \"media_type\": \"image\",\n                        \"media_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T06:13:32.000Z\",\n                        \"updated_at\": null\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Questions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjU5NDA1OSwiZXhwIjoxNTk5MTg2MDU5fQ.64llt45JDcOoql2Aimt5ZYPBMSdO-vt69gRWUzBIzDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/question/list?limit=1&parent_id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"question",
+								"list"
+							],
+							"query": [
+								{
+									"key": "post_status",
+									"value": "all",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "parent_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n| id  | | Array of Number or Number | Search by id    |\n| exclude_id     | | Array of Number of Number | Search omit id  |\n| order_by  | | String   | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc`  |      created_at\n| limit     | | Number   | Define number of record per page. |      10\n| page      | | Number   | Define page to query  |      1\n| or_search | | Object   | Search by multiple fields with `OR` operation. Example: `{username: \"Ozawa\", last_name: \"Tokuda\"}` |\n|post_status|*|Array of String or String|Search by status. `all`, `publish`, `pending`, `trash`, `deleted`|\n|post_content| |String|Search by Post's content\n|user_id| |Number|Search by owner Id|"
+					},
+					"response": [
+						{
+							"name": "List Questions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/question/list?post_status=all",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"question",
+										"list"
+									],
+									"query": [
+										{
+											"key": "post_status",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "851"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"353-Oo3mOa5dJMnEazaWPp5OUzucBhw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 08:08:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 2,\n        \"rows\": [\n            {\n                \"id\": 2,\n                \"user_id\": 1,\n                \"post_content\": \"Con cho co may chan?\",\n                \"post_status\": \"publish\",\n                \"created_at\": \"2020-03-17T08:06:45.000Z\",\n                \"updated_at\": null,\n                \"media\": [\n                    {\n                        \"id\": 30,\n                        \"user_id\": 1,\n                        \"media_attachment\": {\n                            \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                            \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                        },\n                        \"media_type\": \"image\",\n                        \"media_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                        \"updated_at\": null\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"user_id\": 1,\n                \"post_content\": \"Con cho co may chan?\",\n                \"post_status\": \"deleted\",\n                \"created_at\": \"2020-03-13T08:05:21.000Z\",\n                \"updated_at\": \"2020-03-13T08:10:07.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Questions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/question/list?post_status=all&limit=1",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"question",
+										"list"
+									],
+									"query": [
+										{
+											"key": "post_status",
+											"value": "all"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "721"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d1-05OxRYW2E2gNbPs1Jm6Jm7BVyNY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Mar 2020 04:38:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 33,\n        \"rows\": [\n            {\n                \"id\": 33,\n                \"user_id\": 6,\n                \"post_content\": \"Bao nhieu tien mot cai nia?\",\n                \"post_status\": \"publish\",\n                \"created_at\": \"2020-03-19T06:21:26.000Z\",\n                \"updated_at\": null,\n                \"media\": [\n                    {\n                        \"id\": 30,\n                        \"user_id\": 1,\n                        \"media_attachment\": {\n                            \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                            \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                        },\n                        \"media_type\": \"image\",\n                        \"media_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                        \"updated_at\": null\n                    }\n                ],\n                \"full_name\": \"Bang Tran\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwiaWF0IjoxNTg2ODMxNzkyLCJleHAiOjE1ODk0MjM3OTJ9.wGBbs1zHvCTmbMYeda3jwZbNkQb-Fhe6tIfHdsQVJZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/question/view/:questionId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"question",
+								"view",
+								":questionId"
+							],
+							"variable": [
+								{
+									"key": "questionId",
+									"value": "5",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View Question",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/question/view/:questionId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"question",
+										"view",
+										":questionId"
+									],
+									"variable": [
+										{
+											"key": "questionId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "667"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29b-xs8gIXA0HvNRhhbQ2HztpowVt4s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 08:07:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 1,\n        \"post_content\": \"Con cho co may chan?\",\n        \"post_status\": \"publish\",\n        \"created_at\": \"2020-03-17T08:06:45.000Z\",\n        \"updated_at\": null,\n        \"media\": [\n            {\n                \"id\": 30,\n                \"user_id\": 1,\n                \"media_attachment\": {\n                    \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                    \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                },\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIyLCJ1c2VybmFtZSI6InBhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NzU3MDQwNSwiZXhwIjoxNjAwMTYyNDA1fQ.LOH-BsCXaB4kQ3S4ku068Qn3HwpDIZcpjFBzurVs4PM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"How are you?\",\n\t\"parent_id\": -1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/question/add",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"question",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n| post_content  |* | String | Content of Question    |\n| post_status     |* | String | Status of Question. `publish`, `pending`, `trash`, `deleted`  | `publish`\n|media_ids| |Array of Number|Id of Media|\n|tag_people| |Array of Number|Id of User that is tagged|\n|notify_config| |Object<{title: String}>| Config title for notification|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhaGloaUBnaG0uY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTg0Mzc3Mzk0LCJleHAiOjE1ODY5NjkzOTR9.CuQox9JcLxWdiI3Qt9yj08Utv64dD6H1Xx3VBEuJE0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"question_id\": 2,\n\t\"media_ids\": [17, 18]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/question/update-media/:method",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"question",
+								"update-media",
+								":method"
+							],
+							"variable": [
+								{
+									"key": "method",
+									"value": "remove",
+									"type": "string",
+									"description": "`add`, `remove`"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---|\n|question_id|*|Number|Id of Question|\n|media_ids|*|Array of Number|Id of Media|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwiaWF0IjoxNTg2ODMxNzkyLCJleHAiOjE1ODk0MjM3OTJ9.wGBbs1zHvCTmbMYeda3jwZbNkQb-Fhe6tIfHdsQVJZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"post_status\": \"publish\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/question/edit/:questionId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"question",
+								"edit",
+								":questionId"
+							],
+							"variable": [
+								{
+									"key": "questionId",
+									"value": "5",
+									"type": "string"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n| post_content  | | String | Content of Question    |\n| post_status     | | String | Status of Question. `publish`, `pending`, `trash`, `deleted`  |"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwiaWF0IjoxNTg2ODMxNzkyLCJleHAiOjE1ODk0MjM3OTJ9.wGBbs1zHvCTmbMYeda3jwZbNkQb-Fhe6tIfHdsQVJZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/question/remove/:questionId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"question",
+								"remove",
+								":questionId"
+							],
+							"variable": [
+								{
+									"key": "questionId",
+									"value": "3",
+									"type": "string"
+								}
+							]
+						},
+						"description": "This just updates the status to `deleted`"
+					},
+					"response": []
+				},
+				{
+					"name": "Accept",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VyMkBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1ODk0NTA1NTYsImV4cCI6MTU5MjA0MjU1Nn0.HF2VhpfNxF24r_oDArpPN9cNxOQRgSx8gAZ4STB7nSI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"friend_id\": 2,\n\t\"mail_cfg\" :{\n\t\t\"subject\": \"Accepted\",\n\t\t\"html\": \"I accepted you as friend\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/relationship/accept",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"relationship",
+								"accept"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---|\n|friend_id |* |Number |Id of User |\n|mail_cfg| |Object<ul><li>subject`<string>`</li><li>html`<string>`</li></ul>|To config mailer after performing action|"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "List Comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjE3NjYwNCwiZXhwIjoxNTk4NzY4NjA0fQ.rlCXlqoIqPSd0I9Ir1usPSSHe-nYg_hRa1Kt8KJ2KXE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/comment/list?comment_status=all&limit=1&story_id=137&parent_id=0",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"comment",
+								"list"
+							],
+							"query": [
+								{
+									"key": "comment_status",
+									"value": "all"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "story_id",
+									"value": "137"
+								},
+								{
+									"key": "parent_id",
+									"value": "0"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n| id  | | Array of Number or Number | Search by id    |\n| exclude_id     | | Array of Number of Number | Search omit id  |\n| order_by  | | String   | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc`  |      created_at\n| limit     | | Number   | Define number of record per page. |      10\n| page      | | Number   | Define page to query  |      1\n| or_search | | Object   | Search by multiple fields with `OR` operation. Example: `{username: \"Ozawa\", last_name: \"Tokuda\"}` |\n|answer_status|*|Array of String or String|Search by status. `all`, `publish`, `pending`, `trash`, `deleted`|\n|answer_content| |String|Search by Answer's content\n|question_id| |Number|Search By Question's Id|\n|user_id| |Number|Search by owner Id|\n|parent_id| |Number|Search by owner Id. Maybe use to get reply of answer (e.g., facebook answer)|"
+					},
+					"response": [
+						{
+							"name": "List Answers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/list?answers_status=all",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"list"
+									],
+									"query": [
+										{
+											"key": "answers_status",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "786"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"312-np3LPojVgx3+maGggVQ2rjQle9U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Mar 2020 06:47:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 3,\n        \"rows\": [\n            {\n                \"id\": 3,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know\",\n                \"answers_status\": \"deleted\",\n                \"created_at\": \"2020-03-16T05:25:35.000Z\",\n                \"updated_at\": \"2020-03-16T05:26:08.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know well\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n            },\n            {\n                \"id\": 1,\n                \"parent_id\": 0,\n                \"question_id\": 1,\n                \"answers_content\": \"I dont know\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:21:54.000Z\",\n                \"updated_at\": null,\n                \"replies\": [\n                    {\n                        \"id\": 2,\n                        \"parent_id\": 1,\n                        \"question_id\": 1,\n                        \"answers_content\": \"I know well\",\n                        \"answers_status\": \"publish\",\n                        \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                        \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Answers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/list?answers_status=all",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"list"
+									],
+									"query": [
+										{
+											"key": "answers_status",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1545"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"609-rHa8zyr9WalXtEb3SVqi0O3lvG0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 07:59:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 4,\n        \"rows\": [\n            {\n                \"id\": 4,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-17T07:42:04.000Z\",\n                \"updated_at\": null,\n                \"media\": [\n                    {\n                        \"id\": 30,\n                        \"user_id\": 1,\n                        \"media_attachment\": {\n                            \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                            \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                        },\n                        \"media_type\": \"image\",\n                        \"media_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                        \"updated_at\": null\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know\",\n                \"answers_status\": \"deleted\",\n                \"created_at\": \"2020-03-16T05:25:35.000Z\",\n                \"updated_at\": \"2020-03-16T05:26:08.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know well\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n            },\n            {\n                \"id\": 1,\n                \"parent_id\": 0,\n                \"question_id\": 1,\n                \"answers_content\": \"I dont know\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:21:54.000Z\",\n                \"updated_at\": null,\n                \"replies\": [\n                    {\n                        \"id\": 4,\n                        \"parent_id\": 1,\n                        \"question_id\": 1,\n                        \"answers_content\": \"I know\",\n                        \"answers_status\": \"publish\",\n                        \"created_at\": \"2020-03-17T07:42:04.000Z\",\n                        \"updated_at\": null\n                    },\n                    {\n                        \"id\": 2,\n                        \"parent_id\": 1,\n                        \"question_id\": 1,\n                        \"answers_content\": \"I know well\",\n                        \"answers_status\": \"publish\",\n                        \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                        \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTkxLCJ1c2VybmFtZSI6Im5hQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MTc4Mjg0NywiZXhwIjoxNTk0Mzc0ODQ3fQ.zuxfeg9osglR4Xlpxri6dim3abmPSmYp8aOTJykDkLA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/comment/view/:commentId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"comment",
+								"view",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "251",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a4-m4+tfxKSxI8DhNVqctBX2/w353A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 07:59:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"parent_id\": 1,\n        \"question_id\": 1,\n        \"answers_content\": \"I know\",\n        \"answers_status\": \"publish\",\n        \"created_at\": \"2020-03-17T07:42:04.000Z\",\n        \"updated_at\": null,\n        \"media\": [\n            {\n                \"id\": 30,\n                \"user_id\": 1,\n                \"media_attachment\": {\n                    \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                    \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                },\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-nvJCxHh1se/aequE3c0z9T9VtQk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Mar 2020 06:59:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"parent_id\": 0,\n        \"question_id\": 1,\n        \"answers_content\": \"I dont know\",\n        \"answers_status\": \"publish\",\n        \"created_at\": \"2020-03-16T05:21:54.000Z\",\n        \"updated_at\": null,\n        \"replies\": [\n            {\n                \"id\": 2,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know well\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "707"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c3-+ylCRm2TEfZk0YCPq/7duvgImRY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Mar 2020 04:38:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"user_id\": 1,\n        \"parent_id\": 1,\n        \"question_id\": 1,\n        \"answer_content\": \"I know\",\n        \"answer_status\": \"publish\",\n        \"created_at\": \"2020-03-23T03:54:24.000Z\",\n        \"updated_at\": null,\n        \"full_name\": \"LU GIA\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYW5uZ3V5ZW5kaW5ocXVvYzExNUBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTIzNzg1NzIsImV4cCI6MTU5NDk3MDU3Mn0.La5EVTm6xF5tSRWUjww9psbId8UC_XuKl4EqoX885g4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment_info\": {\n\t\t\"story_id\": 137,\n\t\t\"comment_status\": \"publish\",\n\t\t\"parent_id\": 246\n\t},\n\t\"media_ids\": [1634],\n\t\"tagged_users\": [164]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-honoru.omoeo.co/comment/add",
+							"protocol": "https",
+							"host": [
+								"api-honoru",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"comment",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n|parent_id| |Number| Id of answer that is replying|\n|question_id|*|Number|Id of Question|\n|answer_content| |String|Content of Answer. Required if there is no media given|\n|answer_status| |String|Status of Answer. `publish`, `pending`, `trash`, `deleted`|`publish`\n|media_ids| |Array of Number|Id of media|\n|tag_people| |Array of Number|Id of User that is tagged|\n|notify_config| |Object<{title: String}>| Config title for notification|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Answer Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhaGloaUBnaG0uY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTg0Mzc3Mzk0LCJleHAiOjE1ODY5NjkzOTR9.CuQox9JcLxWdiI3Qt9yj08Utv64dD6H1Xx3VBEuJE0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"answer_id\": 4,\n\t\"media_ids\": [2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/answer/update-media/:method",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"answer",
+								"update-media",
+								":method"
+							],
+							"variable": [
+								{
+									"key": "method",
+									"value": "remove",
+									"type": "string",
+									"description": "`add`, `remove`"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---|\n|answer_id|*|Number|Id of Answer|\n|media_ids|*|Array of Number|Id of Media|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzLCJ1c2VybmFtZSI6ImhhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MDQ3ODI4MCwiZXhwIjoxNTkzMDcwMjgwfQ.sbSJHlFnndFdj0xwAIouaCT9zMw-021NA1jbazQbvC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment_info\": {\n\t\t\"comment_content\": \"\"\n\t}\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/comment/edit/:answerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"comment",
+								"edit",
+								":answerId"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "251",
+									"type": "string"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n|parent_id| |Number| Id of answer that is replying|\n|question_id| |Number|Id of Question|\n|answer_content| |String|Content of Answer|\n|answer_status| |String|Status of Answer. `publish`, `pending`, `trash`, `deleted`|"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksInVzZXJuYW1lIjoiaGFAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTg5OTc0MTcwLCJleHAiOjE1OTI1NjYxNzB9.J9KJx9YFxrFN_-BKYAS30FaPvrA7ccyzpgKoyZp8ATo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/comment/remove/:answerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"comment",
+								"remove",
+								":answerId"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "12",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzLCJ1c2VybmFtZSI6Im5hQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MjI5ODgyMiwiZXhwIjoxNTk0ODkwODIyfQ.HWXi-pa7yhPWIgdoy7RyCwSQLcuQRp5zXd9HH390jSk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/comment/like/:commentId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"comment",
+								"like",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "246",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-nvJCxHh1se/aequE3c0z9T9VtQk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Mar 2020 06:59:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"parent_id\": 0,\n        \"question_id\": 1,\n        \"answers_content\": \"I dont know\",\n        \"answers_status\": \"publish\",\n        \"created_at\": \"2020-03-16T05:21:54.000Z\",\n        \"updated_at\": null,\n        \"replies\": [\n            {\n                \"id\": 2,\n                \"parent_id\": 1,\n                \"question_id\": 1,\n                \"answers_content\": \"I know well\",\n                \"answers_status\": \"publish\",\n                \"created_at\": \"2020-03-16T05:22:30.000Z\",\n                \"updated_at\": \"2020-03-16T05:25:23.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "707"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c3-+ylCRm2TEfZk0YCPq/7duvgImRY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Mar 2020 04:38:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"user_id\": 1,\n        \"parent_id\": 1,\n        \"question_id\": 1,\n        \"answer_content\": \"I know\",\n        \"answer_status\": \"publish\",\n        \"created_at\": \"2020-03-23T03:54:24.000Z\",\n        \"updated_at\": null,\n        \"full_name\": \"LU GIA\"\n    }\n}"
+						},
+						{
+							"name": "View Answer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/answer/view/:answerId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"answer",
+										"view",
+										":answerId"
+									],
+									"variable": [
+										{
+											"key": "answerId",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a4-m4+tfxKSxI8DhNVqctBX2/w353A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 07:59:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"parent_id\": 1,\n        \"question_id\": 1,\n        \"answers_content\": \"I know\",\n        \"answers_status\": \"publish\",\n        \"created_at\": \"2020-03-17T07:42:04.000Z\",\n        \"updated_at\": null,\n        \"media\": [\n            {\n                \"id\": 30,\n                \"user_id\": 1,\n                \"media_attachment\": {\n                    \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                    \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n                },\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T06:15:31.000Z\",\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "List Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY2LCJ1c2VybmFtZSI6InNhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDI3MzY4MSwiZXhwIjoxNTk2ODY1NjgxfQ.oMoj1wAggEYv1RBGjffP4EnXo_gwL046SNXvI-bsGDg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/media/list?media_status=all&media_type=audio",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"list"
+							],
+							"query": [
+								{
+									"key": "media_status",
+									"value": "all"
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "media_type",
+									"value": "audio"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n| id  | | Array of Number or Number | Search by id    |\n| exclude_id     | | Array of Number of Number | Search omit id  |\n| order_by  | | String   | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc`  |      created_at\n| limit     | | Number   | Define number of record per page. |      10\n| page      | | Number   | Define page to query  |      1\n| or_search | | Object   | Search by multiple fields with `OR` operation. Example: `{username: \"Ozawa\", last_name: \"Tokuda\"}` |\n|media_status|*|Array of String or String|Search by status. `all`, `publish`, `pending`, `trash`, `deleted`|\n|media_type| |Array of String or String|Search by Type: `video`, `audio`, `image`\n|user_id| |Array of Number or Number|Search By User's Id|"
+					},
+					"response": [
+						{
+							"name": "List Media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/media/list?media_status=all",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"media",
+										"list"
+									],
+									"query": [
+										{
+											"key": "media_status",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3669"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e55-zQNY8kpjebEUmKYVvPOFppEyXJ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 05:22:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 15,\n        \"rows\": [\n            {\n                \"id\": 14,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T05:09:20.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 15,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T05:09:20.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 12,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:24:03.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 13,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:24:03.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 10,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:23:44.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 11,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:23:44.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 9,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:23:19.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 8,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:23:18.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 6,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:20:18.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 7,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T04:20:18.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 5,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T03:43:00.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 4,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-17T03:42:52.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 3,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-16T23:18:57.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 1,\n                \"media_attachment\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-16T14:04:02.000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 1,\n                \"user_id\": 1,\n                \"media_attachment\": null,\n                \"media_type\": \"image\",\n                \"media_status\": \"publish\",\n                \"created_at\": \"2020-03-16T14:02:41.000Z\",\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY0LCJ1c2VybmFtZSI6ImdhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MTAwNTMwMCwiZXhwIjoxNTkzNTk3MzAwfQ.iywcDJES1wU3d3dsTzTOqrkfGcHIyhWpm716vuboUyQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/media/view/:media",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"view",
+								":media"
+							],
+							"variable": [
+								{
+									"key": "media",
+									"value": "1219",
+									"type": "string"
+								}
+							]
+						},
+						"description": "DATA RESPONSE\n\n---\n\n|**Field**|**Type**|**Description**\n|---|---|---\n|id|Number|Id of Media\n|user_id|Number|Id of who uploaded\n|media_attachment|Object|Contain Media location info\n|media_type|String|Type of Media\n|media_status|String|Status of Media\n|signed_url|String|Url to download Media"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Presigned Url to put object",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NTkxNjU0OSwiZXhwIjoxNTk4NTA4NTQ5fQ.j2j_KKpezpxtZi0HEDy12Lm2ipfSI1iog4QWBJ1H4K8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/media/upload-mask/:type?name=ex_hate_me.aac",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"upload-mask",
+								":type"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ex_hate_me.aac",
+									"description": "Name of file"
+								}
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "audio",
+									"type": "string"
+								}
+							]
+						},
+						"description": "This API returns a pre-signed URL of S3 used to upload file. After uploading file successfully, need to use `/media/publish/:mediaId/[PUT]` to make the media be publish\n\nUsage of Presigned Url: [Click here](https://medium.com/@aidan.hallett/securing-aws-s3-uploads-using-presigned-urls-aa821c13ae8d)\n\nThe pre-signed url lives in 3600s"
+					},
+					"response": [
+						{
+							"name": "Upload Media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "media_upload",
+											"description": "Key to upload media",
+											"type": "file",
+											"src": [
+												"/home/francis/Pictures/Screenshot from 2020-02-13 14-26-13.png",
+												"/home/francis/Pictures/Screenshot from 2020-02-20 13-53-12.png"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:50000/media/upload/:type",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"media",
+										"upload",
+										":type"
+									],
+									"variable": [
+										{
+											"key": "type",
+											"value": "image",
+											"description": "`video`, `image`, `audio`"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "564"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"234-xWk7gDKKvoRtuXTei5o5z4tLpSI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Mar 2020 06:15:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": [\n        {\n            \"media_attachment\": {\n                \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-13%2014-26-13.png\",\n                \"key\": \"Screenshot from 2020-02-13 14-26-13.png\"\n            },\n            \"media_type\": \"image\",\n            \"media_status\": \"publish\",\n            \"user_id\": 1,\n            \"insert_id\": 30\n        },\n        {\n            \"media_attachment\": {\n                \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/Screenshot%20from%202020-02-20%2013-53-12.png\",\n                \"key\": \"Screenshot from 2020-02-20 13-53-12.png\"\n            },\n            \"media_type\": \"image\",\n            \"media_status\": \"publish\",\n            \"user_id\": 1,\n            \"insert_id\": 31\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Presigned Url to put object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:50000/media/upload-mask/:type?name=image.png",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"media",
+										"upload-mask",
+										":type"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "image.png",
+											"description": "Name of file"
+										}
+									],
+									"variable": [
+										{
+											"key": "type",
+											"value": "image",
+											"description": "Accepted: `audio`,`video`,`image`"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-lvXa6jvKxpGbd0RO+wlq1C3GsbQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 05:21:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/image.png?AWSAccessKeyId=AKIAW7VOUTY65MGLUH27&Expires=1584512470&Signature=3dzUklvJHqQ9nvWsNRg1L3SV1qQ%3D\",\n        \"media_id\": 45\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY4LCJ1c2VybmFtZSI6InFhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MzQ0OTUxNCwiZXhwIjoxNTk2MDQxNTE0fQ.TWeORtr-MG2mRXzTsTX_viv0ML9AFNSbQd_HJTVyWBI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "media_upload",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:50000/media/upload/:type",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"upload",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "image",
+									"type": "string"
+								}
+							]
+						},
+						"description": "FORM DATA\n\n---\n\n|**Field**|**Required**|**Type**|**Desscription**|**Default Value**\n|---|---|---|---|---\n|media_upload|*|Array of file|Containing file info|"
+					},
+					"response": [
+						{
+							"name": "Upload Media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/octet-stream",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "media_upload",
+											"type": "file",
+											"src": [
+												"/home/francis/Pictures/Screenshot from 2020-03-27 17-24-20.png",
+												"/home/francis/Pictures/Screenshot from 2020-03-30 14-52-13.png",
+												"/home/francis/Pictures/Screenshot from 2020-04-06 02-31-41.png"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:50000/media/upload/:type",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"media",
+										"upload",
+										":type"
+									],
+									"variable": [
+										{
+											"key": "type",
+											"value": "",
+											"description": "`audio`|`image`|`video`"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "493"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ed-nCf0jA1+thY5OOdDD9oXq1TdsWA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Apr 2020 08:57:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": [\n        {\n            \"location\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/image/1587200258006.png\",\n            \"name\": \"image/1587200258006.png\",\n            \"id\": 1201\n        },\n        {\n            \"location\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/image/1587200258013.png\",\n            \"name\": \"image/1587200258013.png\",\n            \"id\": 1200\n        },\n        {\n            \"location\": \"https://honoru-develop-09032020.s3.us-west-2.amazonaws.com/image/1587200258013.png\",\n            \"name\": \"image/1587200258013.png\",\n            \"id\": 1199\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Publish Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDc4MTIyNywiZXhwIjoxNTk3MzczMjI3fQ.-NzNoN-uVCAvn5sFZzAcWTfiPl4UKSj2NSAsmDTFctg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/media/publish/:mediaId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"publish",
+								":mediaId"
+							],
+							"variable": [
+								{
+									"key": "mediaId",
+									"value": "97",
+									"type": "string"
+								}
+							]
+						},
+						"description": "This publish a media after the object has been put to S3 successfully"
+					},
+					"response": [
+						{
+							"name": "Publish Media",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:50000/media/publish/:mediaId",
+									"host": [
+										"localhost"
+									],
+									"port": "50000",
+									"path": [
+										"media",
+										"publish",
+										":mediaId"
+									],
+									"variable": [
+										{
+											"key": "mediaId",
+											"value": "44"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"186-0dv9X083wSjq6kzuvOsTf37SlpE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 05:22:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"id\": 44,\n        \"user_id\": 1,\n        \"media_attachment\": {\n            \"key\": \"ahsudhausdhaushduashduashduahdasudhausd.png\",\n            \"url\": \"https://honoru-develop-09032020.s3.amazonaws.com/ahsudhausdhaushduashduashduahdasudhausd.png\"\n        },\n        \"media_type\": \"image\",\n        \"media_status\": \"publish\",\n        \"created_at\": \"2020-03-18T05:10:43.000Z\",\n        \"updated_at\": \"2020-03-18T05:16:29.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhaGloaUBnaG0uY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTg0Mzc3Mzk0LCJleHAiOjE1ODY5NjkzOTR9.CuQox9JcLxWdiI3Qt9yj08Utv64dD6H1Xx3VBEuJE0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/media/remove/:mediaId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"remove",
+								":mediaId"
+							],
+							"variable": [
+								{
+									"key": "mediaId",
+									"value": "1",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update metadata",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY2LCJ1c2VybmFtZSI6InNhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDI3MzY4MSwiZXhwIjoxNTk2ODY1NjgxfQ.oMoj1wAggEYv1RBGjffP4EnXo_gwL046SNXvI-bsGDg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"file_name\": \"1594273770700.m4a\",\n    \"type\": \"audio\",\n    \"metadata\": {\n        \"duration\": \"460\",\n        \"bit-rate\": \"128\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/media/update-metadata",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"media",
+								"update-metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "List Notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgwLCJ1c2VybmFtZSI6ImFudHJhbjFAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNTk3OTgzODcxLCJleHAiOjE2MDA1NzU4NzF9.g1KuOGZ_4ihFDrgujjO0SX2YYViE7C-tYCtuyriZZkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/notification/list?status=all&recipient_id=209",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"notification",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status[1]",
+									"value": "seen",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "all"
+								},
+								{
+									"key": "recipient_id",
+									"value": "209"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n| **Field**| **Required** | **Type**| **Description** | **Default Value** |\n|----------------|:----------:|---------------------------|----------------------------------------------------------------------------------------------------|-----------------|\n| id| | Array of Number or Number | Search by id|\n| sender_id| | Array of Number or Number | Search by sender id|\n| recipient_id| | Array of Number or Number | Search by recipient id|\n| excluded_id| | Array of Number or Number | Search omit id|\n| order_by | | String| Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc` | created_at-desc\n| limit | | Number| Define number of record per page. | 20\n| page| | Number| Define page to query |1\n| date_from | | String| Search from Date. Format: YYYY-MM-DD|\n| date_to | | String| Search to Date. Format: YYYY-MM-DD |\n| status |*|Array of String or String|Search by status. `all`, `new`, `seen`, `trash`|"
+					},
+					"response": []
+				},
+				{
+					"name": "View Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ0YW5ocDE1MDZAZ21haWwuY29tIiwiaWF0IjoxNTg2ODMxNzkyLCJleHAiOjE1ODk0MjM3OTJ9.wGBbs1zHvCTmbMYeda3jwZbNkQb-Fhe6tIfHdsQVJZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/notification/view/:notificationId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"notification",
+								"view",
+								":notificationId"
+							],
+							"variable": [
+								{
+									"key": "notificationId",
+									"value": "14",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsInVzZXJuYW1lIjoiVGFkYUBnaGl0ZS5jb20iLCJpYXQiOjE1ODcwMTgzNDksImV4cCI6MTU4OTYxMDM0OX0.t-HVFx8wXxg90KSkQbSe4DvuRExlygwYvCFSdBqZwmA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"recipient_id\": 2,\n\t\"messages\": \"Hello\",\n\t\"message_type\": \"message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/notification/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"notification",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**\n|---|---|---|---|---\n|recipient_id| *|Number|Id of recipient|\n|messages| * |String|Message content|\n|message_type|*|String|Type of notification\n|status| |String|Status of notification. `new`, `seen`, `trash`|`new`"
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYzLCJ1c2VybmFtZSI6ImhhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MDQ3ODI4MCwiZXhwIjoxNTkzMDcwMjgwfQ.sbSJHlFnndFdj0xwAIouaCT9zMw-021NA1jbazQbvC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/notification/mark-as-read/:notificationId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"notification",
+								"mark-as-read",
+								":notificationId"
+							],
+							"variable": [
+								{
+									"key": "notificationId",
+									"value": "408",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYW5uZ3V5ZW5kaW5ocXVvYzExNUBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTIwMjE3MjIsImV4cCI6MTU5NDYxMzcyMn0.AydPwsFisgkNxlC3-fB_mAQewxBXeqHtyqVCDpynr40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://usw2-develop-honoru.api.dentaldate.com/notification/remove/:notificationId",
+							"protocol": "https",
+							"host": [
+								"usw2-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"notification",
+								"remove",
+								":notificationId"
+							],
+							"variable": [
+								{
+									"key": "notificationId",
+									"value": "559",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Look Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5MzU4NjQ5MCwiZXhwIjoxNTk2MTc4NDkwfQ.v1JAZq1VUBoFlyd1yWUlc6Mh5henbh0lE1xs5XMu0TE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/notification/look",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"notification",
+								"look"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "List Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/group/list?group_status=all",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"list"
+							],
+							"query": [
+								{
+									"key": "group_status",
+									"value": "all"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|id| |Array of Number or Number|Search by id|\n|exclude_id| |Array of Number or Number|Search omit id|\n|page| |Number|Number of page|1\n|limit| |Number|Number of record per page|20\n|order_by| |String|Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc` | created_at-desc\n|group_status|*|Array of String or String|Search by status. Missing will return Not Found. Accepted: `all`, `new`, `seen`, `trash`|\n|group_name| |String|Search by name|\n|user_id| |Number|Search by who created|"
+					},
+					"response": []
+				},
+				{
+					"name": "View Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/group/view/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"view",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "13",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzY4Nzk2MywiZXhwIjoxNTkwMjc5OTYzfQ.cYYyJqWpyWw261V8wXtB-vOiAkgfW4jRjDbXVCm3oOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/group/members/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"members",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "13",
+									"type": "string"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|id| |Array of Number or Number|Search by id|\n|exclude_id| |Array of Number or Number|Search omit id|\n|page| |Number|Number of page|1\n|limit| |Number|Number of record per page|20\n|order_by| |String|Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc` | created_at-desc\n|username| |String|Search by username|\n|phone| |Array of String or String|Search by phone|\n|email| |String|Search by email|\n|gender| |String|Search by gender\n|role| |Array of String or String|Search by role in group|"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"group_name\": \"Group created with admin\",\n\t\"group_status\": \"publish\",\n\t\"member\": [3,4,5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/group/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"add"
+							],
+							"query": [
+								{
+									"key": "group_status",
+									"value": "all",
+									"disabled": true
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|group_name|*|String|Name of Group|\n|group_status|*|String|Status of Group: `publish`, `pending`, `trash`|\n|member| |Array of Number|Id of member"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"group_id\": 12,\n\t\"user_id\": [3,4,5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/group/add-member",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"add-member"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|group_id|*|Number|Id of Group\n|user_id|*|Array of Number|Id of User to add"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"group_id\": 12,\n\t\"user_id\": [3,4,5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/group/remove-member",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"remove-member"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|group_id|*|Number|Id of Group\n|user_id|*|Array of Number|Id of User to remove"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"group_status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/group/edit/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"edit",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "12",
+									"type": "string"
+								}
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|group_name| |String|Name of Group|\n|group_status| |String|Status of Group: `publish`, `pending`, `trash`|"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4NzUyNjM0OCwiZXhwIjoxNTkwMTE4MzQ4fQ.O-KrYJJhznBk7Hu0ZDuQlijMjt6yS9FZQuO0eKkZGzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:50000/group/remove/:groupId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"group",
+								"remove",
+								":groupId"
+							],
+							"variable": [
+								{
+									"key": "groupId",
+									"value": "12",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Story",
+			"item": [
+				{
+					"name": "Add Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIyLCJ1c2VybmFtZSI6InBhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5ODM0MjYyNiwiZXhwIjoxNjAwOTM0NjI2fQ.OZM5QO8L9BvsdenO93uCkxOglz62hZdfxvXVt4b1BEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"story_info\": {\n    \"story_content\": \"Ayyo\",\n    \"story_privacy\": \"only-me\",\n    \"coordinates\": {}\n  },\n  \"selected_questions\": [{\n    \"id\": 183,\n    \"media_ids\": [19,20]\n  },{\n    \"id\": 18,\n    \"media_ids\": [21]\n  },{\n    \"id\": 19,\n    \"media_ids\": [22]\n  }],\n  \"tagged_users\": [4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/story/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Action Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjA4LCJ1c2VybmFtZSI6InF1b2NjdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTg3NjQ4OTcsImV4cCI6MTYwMTM1Njg5N30.lLoaWChSp3H3QnWdzh0rC8O3zVVO2YS5cLMqDkf_oIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/:action/:story_id/",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								":action",
+								":story_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "action",
+									"value": "like",
+									"type": "string",
+									"description": "save|like|listen|report"
+								},
+								{
+									"key": "story_id",
+									"value": "732",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJnaGl0ZXRlQGdoaXRlLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NzM3OTIzMywiZXhwIjoxNTk5OTcxMjMzfQ.cJb7nDbs6FV1VDLspR5yRVDKOHM01yHLi7U3geUCjEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/list-conversations",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"list-conversations"
+							],
+							"query": [
+								{
+									"key": "order_by",
+									"value": "created_at-asc",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "get_saved",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "story_content",
+									"value": "qyuegsdfgeyu4t267456wgfsdhjfsdgfgsdrg2467rtgfdfhg",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "138",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "195",
+									"disabled": true
+								},
+								{
+									"key": "story_status",
+									"value": "pending",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJnaGl0ZXRlQGdoaXRlLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5ODM0NjM5MCwiZXhwIjoxNjAwOTM4MzkwfQ.d0RWntk8svafYdZXpzBeHV5vmmYP1pe67LR3AqAqesg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/view/732",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"view",
+								"732"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI3LCJ1c2VybmFtZSI6ImRhdmlkbmV3QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NzU3MjA0NCwiZXhwIjoxNjAwMTY0MDQ0fQ.dhwSkMI5lK8oUMkvPW11oWc2jHqL9rK23UBhNIrmUWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/story/news-feed?limit=1",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"story",
+								"news-feed"
+							],
+							"query": [
+								{
+									"key": "story_content",
+									"value": "lo",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "id",
+									"value": "137",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIyLCJ1c2VybmFtZSI6InBhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5ODE3NjY5NywiZXhwIjoxNjAwNzY4Njk3fQ.3EfS-OHdHFZPvMU7wVA_x8Rq7BLfKLantLtNdht_L_I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publish_story\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/story/edit/994",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"story",
+								"edit",
+								"994"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJoYUBnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTAxMTc5NTMsImV4cCI6MTU5MjcwOTk1M30.M1nXVgilGDySHz9JKyNRatHl0M48_aAXL-8Tb_vh1W8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"story_id\": 137,\n\t\"media_ids\": [1207]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/story/update-media/:method",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"update-media",
+								":method"
+							],
+							"variable": [
+								{
+									"key": "method",
+									"value": "remove",
+									"type": "string",
+									"description": "`add`, `remove`"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjA4LCJ1c2VybmFtZSI6InF1b2NjdW9uZzEyM0BnbWFpbC5jb20iLCJyb2xlX2lkIjoyLCJpYXQiOjE1OTg0NDQyODYsImV4cCI6MTYwMTAzNjI4Nn0.jRuPs2C7h9xhQjUFwqjharLTgxeJ7WWjoA71hhULYMI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsImlhdCI6MTU4ODY3NzEwNywiZXhwIjoxNTkxMjY5MTA3fQ.WldBfg6eShreIZCP6keOQVEKLy52P9RzuLtDW118144",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://aps1-develop-honoru.api.dentaldate.com/story/remove/1392",
+							"protocol": "https",
+							"host": [
+								"aps1-develop-honoru",
+								"api",
+								"dentaldate",
+								"com"
+							],
+							"path": [
+								"story",
+								"remove",
+								"1392"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Mutual Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDE0MzkyMSwiZXhwIjoxNTk2NzM1OTIxfQ.e2qIh6NW0aqqK47POYnef5Q4USySYL7AW8V1lHrrLWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/mutual/75",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"mutual",
+								"75"
+							],
+							"query": [
+								{
+									"key": "order_by",
+									"value": "created_at-asc",
+									"disabled": true
+								},
+								{
+									"key": "get_saved",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "story_content",
+									"value": "qyuegsdfgeyu4t267456wgfsdhjfsdgfgsdrg2467rtgfdfhg",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "138",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "137",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Report Reason",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY2LCJ1c2VybmFtZSI6InNhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDIwMDA0NCwiZXhwIjoxNTk2NzkyMDQ0fQ.lkh0RP_z9TT1lI7MUOzQsWkb4IKA-W8Mu1g_cLwL-lo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/report-reason",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"report-reason"
+							],
+							"query": [
+								{
+									"key": "order_by",
+									"value": "created_at-asc",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "get_saved",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "story_content",
+									"value": "qyuegsdfgeyu4t267456wgfsdhjfsdgfgsdrg2467rtgfdfhg",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "138",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "137",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic Story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY5LCJ1c2VybmFtZSI6InRvLmx5MTA1OTk5QGdtYWlsLmNvbSIsInJvbGVfaWQiOjIsImlhdCI6MTU5NDcwMDE2NywiZXhwIjoxNTk3MjkyMTY3fQ.8Qa4JeaX4BKjAKxF1ASOodvWTEBLqVR26QzpKtiVQlk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/story/statistic?period=yearly&date_end=2020-07-14&order_direction=asc",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "yearly"
+								},
+								{
+									"key": "date_end",
+									"value": "2020-07-14"
+								},
+								{
+									"key": "order_direction",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Question Action",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcyLCJ1c2VybmFtZSI6InBhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NzgxMTM0NiwiZXhwIjoxNjAwNDAzMzQ2fQ.n8fTqqYnHBpV7bY7xSg2w94BY5UA_N5tjIqyEf0mmBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_info\": [\r\n        {\r\n            \"id\": 183\r\n        },\r\n        {\r\n            \"id\": 18\r\n        },\r\n        {\r\n            \"id\": 19\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/story/edit-question/271",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"story",
+								"edit-question",
+								"271"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sticker",
+			"item": [
+				{
+					"name": "List Sticker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/sticker/list?sticker_status=all&limit=1",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"sticker",
+								"list"
+							],
+							"query": [
+								{
+									"key": "sticker_status",
+									"value": "all"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Sticker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/sticker/view/:stickerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"sticker",
+								"view",
+								":stickerId"
+							],
+							"variable": [
+								{
+									"key": "stickerId",
+									"value": "3",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Sticker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sticker_data\": {\n        \"sticker_name\": \"Gau Gau\"\n    },\n    \"media_ids\": [1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/sticker/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"sticker",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Sticker",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"media_ids\": [1,2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/sticker/edit/:stickerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"sticker",
+								"edit",
+								":stickerId"
+							],
+							"variable": [
+								{
+									"key": "stickerId",
+									"value": "3",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Sticker",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/sticker/remove/:stickerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"sticker",
+								"remove",
+								":stickerId"
+							],
+							"variable": [
+								{
+									"key": "stickerId",
+									"value": "3",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "List Answer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjU5NDA1OSwiZXhwIjoxNTk5MTg2MDU5fQ.64llt45JDcOoql2Aimt5ZYPBMSdO-vt69gRWUzBIzDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/answer/list?story_id=203&limit=5",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"answer",
+								"list"
+							],
+							"query": [
+								{
+									"key": "story_id",
+									"value": "203"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "order_by",
+									"value": "created_at-asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Answer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIyLCJ1c2VybmFtZSI6InBhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5ODM0MjYyNiwiZXhwIjoxNjAwOTM0NjI2fQ.OZM5QO8L9BvsdenO93uCkxOglz62hZdfxvXVt4b1BEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"story_id\": 733,\r\n    \"media_id\": 310\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/answer/add",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"answer",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Answer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjU5NDA1OSwiZXhwIjoxNTk5MTg2MDU5fQ.64llt45JDcOoql2Aimt5ZYPBMSdO-vt69gRWUzBIzDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"media_id\": 311,\r\n    \"answer_status\": \"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:50000/answer/edit/:answerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"answer",
+								"edit",
+								":answerId"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "1",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Answer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcxLCJ1c2VybmFtZSI6ImJhQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTU5NjU5NDA1OSwiZXhwIjoxNTk5MTg2MDU5fQ.64llt45JDcOoql2Aimt5ZYPBMSdO-vt69gRWUzBIzDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:50000/answer/remove/:answerId",
+							"host": [
+								"localhost"
+							],
+							"port": "50000",
+							"path": [
+								"answer",
+								"remove",
+								":answerId"
+							],
+							"variable": [
+								{
+									"key": "answerId",
+									"value": "1",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

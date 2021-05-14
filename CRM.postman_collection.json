@@ -1,0 +1,3126 @@
+{
+	"info": {
+		"_postman_id": "0a054e67-4c1c-425d-b451-95ca990c1d3c",
+		"name": "CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ghitete@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.omoeo.co/account/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU4MTkwODQ0MCwiZXhwIjoxNTgyNTEzMjQwfQ.-WLAEA-AO17EFohCfxYyDYRJ-9hH2_7jyHS2VpGSXoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"configs\": {\n        \"fields\": [\n            {\n                \"name\": \"level\",\n                \"type\": \"int\"\n            },\n            {\n            \t\"name\": \"caplqe\",\n            \t\"type\": \"string\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/organization/edit/15",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"organization",
+								"edit",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coupon",
+			"item": [
+				{
+					"name": "Add Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkxOTYwMDM1LCJleHAiOjE1OTI1NjQ4MzV9.km9IjaoE6NKmPfL-PO4VOdcRFDr7-FjhvevHU5pTMLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"coupon_name\": \"#LUBI01\",\n\t\"discount_by\": \"$\",\n\t\"coupon_type\": \"global\",\n\t\"quantity\": -1,\n\t\"discount_rule\": {\n\t\t\"each\": true,\n\t\t\"mixed\": false,\n\t\t\"rules\": [{\n\t\t\t\"count\": 0,\n\t\t\t\"value\": 170\n\t\t},{\n\t\t\t\"count\": 1000,\n\t\t\t\"value\": 320\n\t\t}]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.omoeo.co/coupon/add",
+							"protocol": "https",
+							"host": [
+								"api",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"coupon",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Coupon",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkxOTM0MTM2LCJleHAiOjE1OTI1Mzg5MzZ9.OisVGvH3d_XF5wHRTxUsAQsmmQd_OywngIyI68TGr04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"coupon_name\": \"#COUPON2\",\n\t\"discount_by\": \"$\",\n\t\"coupon_type\": \"global\",\n\t\"quantity\": -1,\n\t\"discount_rule\": {\n\t\t\"each\": true,\n\t\t\"mixed\": true,\n\t\t\"rules\": [{\n\t\t\t\"count\": 0,\n\t\t\t\"value\": 200\n\t\t}]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/coupon/list?status=all",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"coupon",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU5MTk1NDU2NCwiZXhwIjoxNTkyNTU5MzY0fQ.vGHhUO8kdk86Hrhpogvp7CeNe8T_9d46MOD2vrRR3Ek",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi-dev.omoeo.co",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"coupon_code\": \"#MAKM02\",\n\t\"total_amount\": 3602400,\n\t\"items\": [{\"quantity\": \"992\"}, {\"quantity\": \"1001\"}],\n\t\"user_id\": 54\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-dev.omoeo.co/coupon/checkout",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"coupon",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery",
+			"item": [
+				{
+					"name": "List District",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/delivery/list-districts",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"delivery",
+								"list-districts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Wards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/delivery/list-wards/1897",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"delivery",
+								"list-wards",
+								"1897"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Services",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"weight\": 10000,\n    \"length\": 10,\n    \"width\": 110,\n    \"height\": 20,\n    \"fromDistId\": 1455,\n    \"toDistId\": 1462\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/delivery/list-available-services",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"delivery",
+								"list-available-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fromDistrictId\": 1455,\n  \"fromWardCode\": \"21402\",\n  \"toDistrictId\": 1462,\n  \"toWardCode\": \"21609\",\n  \"clientContactName\": \"Giao hang sieu nhanh\",\n  \"clientContactPhone\": \"19009090\",\n  \"clientAddress\": \"Xa lo Ha Noi\",\n  \"customerName\": \"Huynh Phuoc Tan\",\n  \"customerPhone\": \"0987654321\",\n  \"shippingAddress\": \"Huynh Gia\",\n  \"noteCode\": \"CHOXEMHANGKHONGTHU\",\n  \"serviceId\": 53319,\n  \"weight\": 12000,\n  \"length\": 200,\n  \"width\": 120,\n  \"height\": 200,\n  \"insuranceFee\": 10000000,\n  \"extraServices\": [53331,16],\n  \"codAmount\": 1300000,\n  \"note\": \"Giao gio hanh chanh\",\n  \"returnAddress\": \"Le HOng Phong\",\n  \"returnContactName\": \"Bang Bang\",\n  \"returnContactPhone\": \"0987654321\",\n  \"returnDistrictId\": 1455\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/delivery/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"delivery",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"weight\": 10000,\n    \"length\": 10,\n    \"width\": 110,\n    \"height\": 20,\n    \"fromDistId\": 1455,\n    \"toDistId\": 1462\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/delivery/view/5CR1R44F",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"delivery",
+								"view",
+								"5CR1R44F"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "Add Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg4MDY1NDY3LCJleHAiOjE1ODg2NzAyNjd9.n9EB6vKtDJQ4Obd5n0mkXq4lkLdLQXbhDP9JmdMsjPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://crm.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"tanh12222p212221506.so2cial@gmail.com\",\n\t\"organization_id\": 155,\n\t\"email\": \"tanhp112w122232206.so2cial@gmail.com\",\n\t\"user_type\": \"member\",\n\t\"phone\": \"0914511421\",\n\t\"pass\": \"123456\",\n\t\"city_id\": 1,\n\t\"district_id\": 1,\n\t\"status\": \"active\",\n\t\"customer_config\": {\n\t\t\"payment_method\": \"cash\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/member/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"member",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkxMzUwOTUwLCJleHAiOjE1OTE5NTU3NTB9.smF7FqwEiNf_w9-iNrFLmHs6nGTGFT_fSHlb08DiU8o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/member/view/2",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"member",
+								"view",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTgzMjkzOTczLCJleHAiOjE1ODM4OTg3NzN9.wOQT8oVr6nD4Y74Z1pgjcgqxwfzzLu0Z98GWFg4sN8k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/member/list?user_type=member&status=all&exclude_id=348",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"member",
+								"list"
+							],
+							"query": [
+								{
+									"key": "user_type",
+									"value": "member"
+								},
+								{
+									"key": "status",
+									"value": "all"
+								},
+								{
+									"key": "exclude_id",
+									"value": "348"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTgzMzA1ODUyLCJleHAiOjE1ODM5MTA2NTJ9.m0fUNBlwZETDy4SO-gCpEu8lZI2OkvEQGzv2f1rvalk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_type\": \"accountant\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/member/edit/5",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"member",
+								"edit",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInVzZXJuYW1lIjoiZG9hbnRoYW8xNTAzQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjIsImlhdCI6MTU5MTU0NjE0NywiZXhwIjoxNTkyMTUwOTQ3fQ.bmPGXfRQdiYAp6kHFdO6zfvfgOR9kSbb7ssMFWbnWH8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"type": "text",
+								"value": "http://lubi.omoeo.co"
+							}
+						],
+						"url": {
+							"raw": "https://api.omoeo.co/webhook/update-cc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"webhook",
+								"update-cc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "Add Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg3OTY3NTQwLCJleHAiOjE1ODg1NzIzNDB9.bYNe2ii4Zx_lqdzXhjNw4fMlIOramviodmw5N1Uau7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://crm.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"owner_id\": 2,\n\t\"business_cert_number\": \"12w353aqaaq3\",\n\t\"organization_name\": \"Khang Gia\",\n\t\"organization_slug\": \"k3\",\n\t\"city_id\": 1,\n\t\"district_id\": 2,\n\t\"address\": \"Nam Ky Khoi Nghia\",\n\t\"configs\": {\n        \"fields\": [\n            {\n                \"name\": \"level\",\n                \"type\": \"number\"\n            },\n            {\n            \t\"name\": \"dimension\",\n            \t\"type\": \"string\"\n            }\n        ],\n        \"organization_code\": \"LB\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/organization/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"organization",
+								"add"
+							]
+						},
+						"description": "\t\t\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Organization",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg3OTY3NTQwLCJleHAiOjE1ODg1NzIzNDB9.bYNe2ii4Zx_lqdzXhjNw4fMlIOramviodmw5N1Uau7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omeoo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"owner_id\": 1,\n\t\"business_cert_number\": \"1233aqaaq3\",\n\t\"organization_name\": \"Khang Gia\",\n\t\"organization_slug\": \"qqqqqqaaaq\",\n\t\"city_id\": 1,\n\t\"district_id\": 2,\n\t\"address\": \"Nam Ky Khoi Nghia\",\n\t\"configs\": {\n        \"fields\": [\n            {\n                \"name\": \"level\",\n                \"type\": \"number\"\n            },\n            {\n            \t\"name\": \"dimension\",\n            \t\"type\": \"string\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/organization/view/6",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"organization",
+								"view",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg5MDc4NjI5LCJleHAiOjE1ODk2ODM0Mjl9.2-_NBKkdcpmsdfko1t177X0VfP4Ez1HL56sg_87jkmM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://crm.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_name\": \"lubi\",\n    \"business_cert_number\": \"1233312312\",\n    \"fb_app_id\": \"21e21312123\",\n    \"organization_slug\": \"lubi_dev\",\n    \"domain\": \"lubiweddingg.vn\",\n    \"city_id\": \"48\",\n    \"district_id\": \"492\",\n    \"address\": \"2wea\",\n    \"configs\": {\n        \"fields\": [\n            {\n                \"name\": \"specification\",\n                \"type\": \"string\"\n            },\n            {\n                \"name\": \"dimension\",\n                \"type\": \"string\"\n            },\n            {\n                \"name\": \"color\",\n                \"type\": \"taxonomy\"\n            },\n            {\n                \"name\": \"shape\",\n                \"type\": \"taxonomy\"\n            }\n        ],\n        \"discount_order_rule\": {\n            \"type\": \"$\",\n            \"each\": true,\n            \"rules\": [\n                {\n                    \"count\": 500,\n                    \"value\": 50\n                },\n                {\n                    \"count\": 1000,\n                    \"value\": 100\n                }\n            ]\n        },\n        \"organization_code\": \"lb\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/organization/edit/4",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"organization",
+								"edit",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Organization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU4MzIxMTU1OSwiZXhwIjoxNTgzODE2MzU5fQ.KL66-M_q-eTIIm-zlFAvRWtXbSxu9BbhPaAVPQNyLhI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://crm.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.omoeo.co/organization/list?status=all",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"organization",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk3OTQ0NjUwLCJleHAiOjE1OTg1NDk0NTB9.UF0E7bv2aNOmXqubICkxNsCvVET6Pyo2yZbxrhZ87Jw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "b8b5h1ikn1bp",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 256,\n    \"ship_method\": \"station\",\n    \"payment_method\": \"transfer\",\n    \"allowed_debit\": true,\n    \"amount\": 1519400,\n    \"items\": [\n        \"1:1000\",\n        \"2:499\"\n    ],\n    \"additional_discount\": \"200000\",\n    \"promotion_amount\": 0,\n    \"status\": \"unpaid\",\n    \"email\": \"kimliendalat2008@gmail.com\",\n    \"phone\": \"84918814174\",\n    \"city_id\": 68,\n    \"district_id\": 672,\n    \"address\": \"24 Hai Bà Trưng\",\n    \"receiver_address\": \"CHÀNH XE THÀNH BƯỞI\\n1 VĨNH VIỄN, P2, Q10\",\n    \"debit_amount\": 0,\n    \"ship_status\": \"pending\",\n    \"discount_rate\": {\n        \"each\": true,\n        \"type\": \"$\",\n        \"rules\": [\n            {\n                \"count\": 500,\n                \"value\": 50\n            },\n            {\n                \"count\": 1000,\n                \"value\": 100\n            }\n        ]\n    },\n    \"organization_id\": 2\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/order/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk0ODA1MDAyLCJleHAiOjE1OTU0MDk4MDJ9.5lNyIkniBrD1myZkP33TX1CcUcsxWRq7-PcAxLPi4W4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:12000/order/list?order_by=created_at-desc&status=all&customer_full_name=Thanh Trang",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2019-08-22",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2019-09-05",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "trinh.lh@gamali.com",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "created_at-desc"
+								},
+								{
+									"key": "order_type",
+									"value": "deposit",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "all"
+								},
+								{
+									"key": "completed_at_bottom",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "customer_full_name",
+									"value": "Thanh Trang"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Accepted**|**Default**\n|---|---|---|---|---|---\n| id             |            | Array of Number or Number | Search by id                                                                                       |                 |\n| exclude_id     |            | Array of Number of Number | Search omit id                                                                                     |                 |\n| order_by       |            | String                    | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `last_name-asc`                         |                 |created_at-desc\n| limit          |            | Number                    | Define number of record per page.                                                                  |                 |20\n| page           |            | Number                    | Define page to query                                                           | | 1\n|request_id | |String|Search by request id\n|user| |Number|Search by user id\n|payment_method| |String|Search by payment method\n|start_date| |String|Search by start date| YYYY/MM/DD\n|end_date| |String|Search by end date| YYYY/MM/DD\n|order_type| |String|Search by order type\n|ship_method| |String| Search by ship method\n|ship_status| |String| Search by ship status\n|receiver_name| |String|Search by receiver name\n|order_code| |String|\n|receiver_phone| |String|\n|receiver_city_id| |Number|\n|receiver_district_id| |Number|\n|receiver_address| |String|\n|shipper_id| |Number|\n|warehouse_id| |Number|\n|user_created_id| |Number|\n|user_confirmed_id| |Number|\n|user_ready_id| |Number|\n|completed_at_bottom| |Number| Option to set order for completed order, `1` will make the completed ones be placed at the bottom and `0` vice versa | 1, 0\n|status|*|String/String[]|Set `all` to get all order. Missing make it be Not Found"
+					},
+					"response": []
+				},
+				{
+					"name": "View Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk3OTQ0NjUwLCJleHAiOjE1OTg1NDk0NTB9.UF0E7bv2aNOmXqubICkxNsCvVET6Pyo2yZbxrhZ87Jw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"type": "text",
+								"value": "b8b5h1ikn1bp",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:12000/order/view/851",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"view",
+								"851"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2019-08-22",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2019-09-05",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "trinh.lh@gamali.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkxMzUwOTUwLCJleHAiOjE1OTE5NTU3NTB9.smF7FqwEiNf_w9-iNrFLmHs6nGTGFT_fSHlb08DiU8o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"type": "text",
+								"value": "b8b5h1ikn1bp",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": \"cancel-request\"\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/order/edit/142",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"edit",
+								"142"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2019-08-22",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2019-09-05",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "trinh.lh@gamali.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Order Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5waEBkaG5wb3J0LmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU3Njc1MDg3NCwiZXhwIjoxNTc3MzU1Njc0fQ.NhWJLsHup1BqMUS6X5SdnqQMhciiAqgyBoGbamTkqJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "b8b5h1ikn1bp",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "THViaVdlZGRpbmc=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"order_id\": 3,\n  \"product_id\": 1\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/order/add-item",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"add-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Order Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0YW5waEBkaG5wb3J0LmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU3Njc1MDg3NCwiZXhwIjoxNTc3MzU1Njc0fQ.NhWJLsHup1BqMUS6X5SdnqQMhciiAqgyBoGbamTkqJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "b8b5h1ikn1bp",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "THViaVdlZGRpbmc=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"order_id\": 3,\n  \"product_id\": 1\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/order/remove-item",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"remove-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ship Status Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk5NzE1NzkzLCJleHAiOjE2MDAzMjA1OTN9.vmdHwIwIQDPBHlLc8zIyhRDX2MgteShKLxQ_yvXBLuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"order_id\":1014\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/order/update-ship-status",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"update-ship-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ship Status Log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg0MDY5MzU0LCJleHAiOjE1ODQ2NzQxNTR9.6zy5bl9-2bRiq93xcluaygp6-rpFdf6YqAjNfZkVB7E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/order/log/:orderId",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"log",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "",
+									"type": "string",
+									"description": "Id of Order"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default Value**|\n|---|---|---|---|---\n| id             |            | Array of Number or Number | Search by id                                                                                       |                 |\n| exclude_id     |            | Array of Number of Number | Search omit id                                                                                     |                 |\n| order_by       |            | String                    | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc`                         |     created_at-desc            |\n| limit          |            | Number                    | Define number of record per page.                                                                  |     10            |\n| page           |            | Number                    | Define page to query                                                                               |      1           |\n|user_id| |Number |Search by log creator's Id|\n|date_from| |String |Search from date. Format `YYYY-MM-DD`|\n|date_to| |String |Search to date. Format `YYYY-MM-DD`|"
+					},
+					"response": [
+						{
+							"name": "Ship Status Log",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Referer",
+										"value": "http://lubi.omoeo.co",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:12000/order/log/:orderId",
+									"host": [
+										"localhost"
+									],
+									"port": "12000",
+									"path": [
+										"order",
+										"log",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "",
+											"description": "Id of Order"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "667"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29b-kIZKM1llYUSfiljGX5FIhxI3ZAQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Mar 2020 03:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 4,\n        \"rows\": [\n            {\n                \"id\": 4,\n                \"ref_id\": 50,\n                \"log_content\": \"received\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:43.000Z\"\n            },\n            {\n                \"id\": 3,\n                \"ref_id\": 50,\n                \"log_content\": \"ready\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:42.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"ref_id\": 50,\n                \"log_content\": \"prepared\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:41.000Z\"\n            },\n            {\n                \"id\": 1,\n                \"ref_id\": 50,\n                \"log_content\": \"confirmed\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:38.000Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Ship Status Log",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Referer",
+										"value": "http://lubi.omoeo.co",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:12000/order/log/:orderId",
+									"host": [
+										"localhost"
+									],
+									"port": "12000",
+									"path": [
+										"order",
+										"log",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "",
+											"description": "Id of Order"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "667"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29b-kIZKM1llYUSfiljGX5FIhxI3ZAQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 13 Mar 2020 03:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 4,\n        \"rows\": [\n            {\n                \"id\": 4,\n                \"ref_id\": 50,\n                \"log_content\": \"received\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:43.000Z\"\n            },\n            {\n                \"id\": 3,\n                \"ref_id\": 50,\n                \"log_content\": \"ready\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:42.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"ref_id\": 50,\n                \"log_content\": \"prepared\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:41.000Z\"\n            },\n            {\n                \"id\": 1,\n                \"ref_id\": 50,\n                \"log_content\": \"confirmed\",\n                \"organization_id\": 2,\n                \"ref_type\": \"ship-status\",\n                \"user_id\": 219,\n                \"created_at\": \"2020-03-13T03:18:38.000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkxMTgwNzcyLCJleHAiOjE1OTE3ODU1NzJ9.9y7NLuVeSr3wJq4fPd0JqLrz-_yptM_G_5VBimcFUkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"type": "text",
+								"value": "b8b5h1ikn1bp",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:12000/order/remove/142",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"order",
+								"remove",
+								"142"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2019-08-22",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2019-09-05",
+									"disabled": true
+								},
+								{
+									"key": "package_id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "trinh.lh@gamali.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyODkyOTU4LCJleHAiOjE1OTM0OTc3NTh9.ZXfApthTp-TdGhbiyJUkF_sCod61ccfhZI6QU1hDUUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_title\": \"OMOE123\",\n    \"product_code\": \"OMOE123\",\n    \"price\": \"200\",\n    \"product_content\": \"\",\n    \"warning_quantity\": \"400\",\n    \"specification\": \"\",\n    \"status\": \"publish\",\n    \"items\": [\n        {\n            \"product_title\": \"Bia\",\n            \"price\": \"200\",\n            \"product_content\": \"\",\n            \"photoUrl\": \"\"\n        },\n        {\n            \"product_title\": \"Ruot\",\n            \"price\": \"100\",\n            \"product_content\": \"\",\n            \"photoUrl\": \"\"\n        }\n    ],\n    \"term_ids\": [\n        \"21\",\n        \"2\",\n        \"12\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\": 2,\n\t\"term_id\": 1\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product/group/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"group",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkzMTQ0ODUyLCJleHAiOjE1OTM3NDk2NTJ9.R5qCL7L7uUwZrK8QtxW1AFBu6Pfrhf5D5ECeIRdk9-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-OMOEO-AUTH",
+								"value": "b8b5h1ikn1bp",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "https://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_name\": \"Workshop\"\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product/list?get_warning=",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "all",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "created_at-desc",
+									"disabled": true
+								},
+								{
+									"key": "is_combo",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "term_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "term_id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "487",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "specification",
+									"value": "Vuong, Tron, Tam Giac, ayuddgyugdyuagdhasdhgdhasgduhg",
+									"disabled": true
+								},
+								{
+									"key": "organization_id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "get_warning",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyODkyOTU4LCJleHAiOjE1OTM0OTc3NTh9.ZXfApthTp-TdGhbiyJUkF_sCod61ccfhZI6QU1hDUUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_name\": \"Workshop\"\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product/view/562",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"view",
+								"562"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyODkyOTU4LCJleHAiOjE1OTM0OTc3NTh9.ZXfApthTp-TdGhbiyJUkF_sCod61ccfhZI6QU1hDUUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_title\": \"OMOE123\",\n    \"product_code\": \"OMOE123\",\n    \"price\": \"200\",\n    \"product_content\": \"\",\n    \"warning_quantity\": \"400\",\n    \"specification\": \"\",\n    \"status\": \"publish\",\n    \"items\": [\n        {\n            \"product_title\": \"kkk\",\n            \"price\": \"200\",\n            \"product_content\": \"\",\n            \"photoUrl\": \"\"\n        },\n        {\n            \"id\": 563,\n            \"organization_id\": 2,\n            \"parent_id\": 562,\n            \"product_code\": \"OMOE123-1\",\n            \"product_title\": \"Bia\",\n            \"product_slug\": \"bia\"\n        },\n        {\n            \"id\": 564,\n            \"organization_id\": 2,\n            \"parent_id\": 562,\n            \"product_code\": \"OMOE123-2\",\n            \"product_title\": \"Ruot\",\n            \"product_slug\": \"ruot\",\n            \"product_content\": \"\",\n            \"product_type\": null,\n            \"status\": \"publish\"\n        }\n    ],\n    \"term_ids\": [\n        21,\n        2,\n        \"12\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/product/edit/562",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"edit",
+								"562"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyODkyOTU4LCJleHAiOjE1OTM0OTc3NTh9.ZXfApthTp-TdGhbiyJUkF_sCod61ccfhZI6QU1hDUUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/product/remove/563",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product",
+								"remove",
+								"563"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receipt",
+			"item": [
+				{
+					"name": "Add Receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk5NTUzMTk0LCJleHAiOjE2MDAxNTc5OTR9.-NwraD_U26or-Ydm6N99_DDe1wsi8aTc2thRn8wCk1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customer_id\": 17,\n\t\"receipt_name\": \"tra no\",\n\t\"amount\": 0,\n\t\"status\": \"publish\",\n\t\"payment_method\": \"cash\",\n\t\"receipt_type\": \"income\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/receipt/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"receipt",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk3OTQzODcxLCJleHAiOjE1OTg1NDg2NzF9.83o0s4JmLPyHTp3RkFkQ7qN4oL5Afl3QfZheM4bofyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"type": "text",
+								"value": "http://lubi.omoeo.co"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/receipt/list?status=publish",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"receipt",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "outcome",
+									"disabled": true
+								},
+								{
+									"key": "has_order",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "customer_id",
+									"value": "18",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "publish"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU4MjczNDA1MCwiZXhwIjoxNTgzMzM4ODUwfQ.aFp-njUSAGiiSphUeNFBqwYZcji27TdVqOVuATkIJ8s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/receipt/statistic?date_start=2019-09-20&date_end=2020-09-30&period=monthly&organization_id=2",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"receipt",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "date_start",
+									"value": "2019-09-20"
+								},
+								{
+									"key": "date_end",
+									"value": "2020-09-30"
+								},
+								{
+									"key": "period",
+									"value": "monthly"
+								},
+								{
+									"key": "type",
+									"value": "outcome",
+									"disabled": true
+								},
+								{
+									"key": "has_order",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "customer_id",
+									"value": "18",
+									"disabled": true
+								},
+								{
+									"key": "organization_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU4MjczNDA1MCwiZXhwIjoxNTgzMzM4ODUwfQ.aFp-njUSAGiiSphUeNFBqwYZcji27TdVqOVuATkIJ8s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/receipt/statistic?date_start=2019-09-20&date_end=2020-09-30&period=monthly&organization_id=2",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"receipt",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "date_start",
+									"value": "2019-09-20"
+								},
+								{
+									"key": "date_end",
+									"value": "2020-09-30"
+								},
+								{
+									"key": "period",
+									"value": "monthly"
+								},
+								{
+									"key": "type",
+									"value": "outcome",
+									"disabled": true
+								},
+								{
+									"key": "has_order",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "customer_id",
+									"value": "18",
+									"disabled": true
+								},
+								{
+									"key": "organization_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk5NTUzMTk0LCJleHAiOjE2MDAxNTc5OTR9.-NwraD_U26or-Ydm6N99_DDe1wsi8aTc2thRn8wCk1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customer_id\": 17,\n\t\"receipt_name\": \"tra no\",\n\t\"amount\": 0,\n\t\"status\": \"publish\",\n\t\"payment_method\": \"cash\",\n\t\"receipt_type\": \"income\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/receipt/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"receipt",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Term",
+			"item": [
+				{
+					"name": "List Product Term",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTgzMzk3MzgzLCJleHAiOjE1ODQwMDIxODN9._6NIOuK0JzVkq98GJ5dFOeN8XCEq-kouNjnPqtFECpE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://crm.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/product-term/list",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product-term",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Product Term",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/product-term/view/5",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product-term",
+								"view",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product Term",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": 1,\n  \"term_name\": \"circle\",\n  \"term_type\": \"shape\"\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product-term/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product-term",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product Term",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"term_name\":\"as d asd asd a fsfjkeuirwe rwe r\"\n}"
+						},
+						"url": {
+							"raw": "localhost:12000/product-term/edit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product-term",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product Term",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/product-term/remove/1",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"product-term",
+								"remove",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "List Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk0NzI5NzgzLCJleHAiOjE1OTUzMzQ1ODN9.IP8T5xrlbvsyw4hTmTQNGIavwDxvUez427s4HChG3XU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/warehouse/list?status=all&ticket_code=LBDK20062838",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "all"
+								},
+								{
+									"key": "ticket_type",
+									"value": "expected-produced",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "77",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "76",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "75",
+									"disabled": true
+								},
+								{
+									"key": "completed_at_bottom",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "print_code",
+									"value": "abcde",
+									"disabled": true
+								},
+								{
+									"key": "product_code",
+									"value": "LBF107-2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "30",
+									"disabled": true
+								},
+								{
+									"key": "ticket_code",
+									"value": "LBDK20062838"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n| id| | Array of Number or Number | Search by id|\n| order_by | | String| Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc` | created_at-desc\n| limit | | Number| Define number of record per page. | 20\n| page| | Number| Define page to query |1\n| date_from | | String| Search from Date. Format: YYYY-MM-DD|\n| date_to | | String| Search to Date. Format: YYYY-MM-DD |\n| status |*|Array of String or String|Search by status. `all`, `confirmed`, `exported`, `imported`, `trash`|\n|user_id| |Number|Id of User|\n|parent_id| |Number|Id of parent|\n|ticket_type| |Array of String or String|Type of Ticket: `expected-produced`, `actual-produced`, `import`, `export`|"
+					},
+					"response": [
+						{
+							"name": "List Ticket",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Referer",
+										"value": "http://lubi.omoeo.co",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:12000/warehouse/list?status=all",
+									"host": [
+										"localhost"
+									],
+									"port": "12000",
+									"path": [
+										"warehouse",
+										"list"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2198"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"896-CPhBI9gkOi+8k1VzBrYh/rljNk0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 May 2020 04:09:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 56,\n        \"rows\": [\n            {\n                \"id\": 58,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"export\",\n                \"status\": \"exported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:35:02.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 57,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:34:47.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 56,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:34:40.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 55,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:34:34.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 54,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:33:45.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 53,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"pending\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:28:09.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 52,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": 219,\n                \"created_at\": \"2020-05-04T03:19:52.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 51,\n                \"ticket_comment\": \"Them de test\",\n                \"ticket_type\": \"import\",\n                \"status\": \"imported\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-05-04T03:17:11.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 37\n            },\n            {\n                \"id\": 45,\n                \"ticket_comment\": \"Tong du kien\",\n                \"ticket_type\": \"expected-produced\",\n                \"status\": \"confirmed\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-04-24T11:17:55.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 0\n            },\n            {\n                \"id\": 46,\n                \"ticket_comment\": \"Da san xuat\",\n                \"ticket_type\": \"actual-produced\",\n                \"status\": \"confirmed\",\n                \"organization_id\": 2,\n                \"user_id\": null,\n                \"created_at\": \"2020-04-24T11:17:55.000Z\",\n                \"updated_at\": null,\n                \"order_id\": null,\n                \"parent_id\": 45\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Statistic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MywiaWF0IjoxNTg5ODQ3MzMwLCJleHAiOjE1OTA0NTIxMzB9.Id4IGliqnMLmgKgSOKNC6dcs9bHh1K4t4Olyy80e6Rk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/warehouse/statistic?order_by=created_at-desc&ticket_id=70",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "date_start",
+									"value": "2019-08-08",
+									"disabled": true
+								},
+								{
+									"key": "date_end",
+									"value": "2019-09-10",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "created_at-desc"
+								},
+								{
+									"key": "ticket_id",
+									"value": "70"
+								}
+							]
+						},
+						"description": "QUERY PARAMS\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n| order_by  | | String   | Define sort. Format: {columnName-direction(asc/desc)}. Ex: `created_at-desc`  |      created_at-desc\n| limit     | | Number   | Define number of record per page. |      10\n| page      | | Number   | Define page to query  |      1\n|date_start| |String| Format: YYYY-MM-DD\n|date_end| |String| Format: YYYY-MM-DD\n|product_id| |Number|Search by product id\n|product_code| |String|Search by product code\n|ticket_id| |Number|Id of Ticket"
+					},
+					"response": [
+						{
+							"name": "Statistic",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Referer",
+										"value": "http://lubi.omoeo.co",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:12000/warehouse/statistic?order_by=created_at-asc",
+									"host": [
+										"localhost"
+									],
+									"port": "12000",
+									"path": [
+										"warehouse",
+										"statistic"
+									],
+									"query": [
+										{
+											"key": "product_id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "date_start",
+											"value": "2019-08-08",
+											"disabled": true
+										},
+										{
+											"key": "date_end",
+											"value": "2019-09-10",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "created_at-asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1467"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5bb-A+rl51QZ6vbSZuU7CrgOxoS1pi0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 May 2020 04:03:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"description\": \"Operation is successfully\",\n    \"data\": {\n        \"total\": 4,\n        \"rows\": [\n            {\n                \"created_at\": \"2020-04-23T09:22:03.000Z\",\n                \"product_id\": 58,\n                \"product_title\": \"Thiệp cưới LBF030\",\n                \"product_code\": \"LBF030\",\n                \"expected_produced\": 10,\n                \"actual_produced\": 0,\n                \"imported\": 0,\n                \"differential_input\": 0,\n                \"differential_print_shop_in_percent\": 0,\n                \"not_manufactured_yet\": 0,\n                \"wasted_of_produced_in_percent\": 0,\n                \"wasted\": 0,\n                \"wasted_in_percent\": 0\n            },\n            {\n                \"created_at\": \"2020-04-23T09:22:38.000Z\",\n                \"product_id\": 58,\n                \"product_title\": \"Thiệp cưới LBF030\",\n                \"product_code\": \"LBF030\",\n                \"expected_produced\": 10,\n                \"actual_produced\": null,\n                \"imported\": 1080,\n                \"differential_input\": 10,\n                \"differential_print_shop_in_percent\": 1,\n                \"not_manufactured_yet\": -1080,\n                \"wasted_of_produced_in_percent\": null,\n                \"wasted\": -1070,\n                \"wasted_in_percent\": -107\n            },\n            {\n                \"created_at\": \"2020-04-24T11:17:55.000Z\",\n                \"product_id\": 1,\n                \"product_title\": \"Thiệp cưới LBF002\",\n                \"product_code\": \"LBF002\",\n                \"expected_produced\": 1000,\n                \"actual_produced\": 800,\n                \"imported\": 740,\n                \"differential_input\": 200,\n                \"differential_print_shop_in_percent\": 0.2,\n                \"not_manufactured_yet\": 60,\n                \"wasted_of_produced_in_percent\": 0.075,\n                \"wasted\": 260,\n                \"wasted_in_percent\": 0.26\n            },\n            {\n                \"created_at\": \"2020-04-24T11:17:55.000Z\",\n                \"product_id\": 4,\n                \"product_title\": \"Bìa thư\",\n                \"product_code\": \"LBF002-3\",\n                \"expected_produced\": 5000,\n                \"actual_produced\": 400,\n                \"imported\": 400,\n                \"differential_input\": 4600,\n                \"differential_print_shop_in_percent\": 0.92,\n                \"not_manufactured_yet\": 0,\n                \"wasted_of_produced_in_percent\": 0,\n                \"wasted\": 4600,\n                \"wasted_in_percent\": 0.92\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg5OTQ4NzUwLCJleHAiOjE1OTA1NTM1NTB9.bAmvrGnpRvxIuGZSy_93gix6Ka114f60mnB23QgL3Gs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/warehouse/view/138",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"view",
+								"138"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk5NzE3MzM1LCJleHAiOjE2MDAzMjIxMzV9.UrE7hInqCUSXI3HbOhMmfMSfbUh3pEzerU-t6neJmBE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"exported\",\n    \"ticket_type\": \"export\",\n    \"order_id\": 1034,\n    \"ticket_comment\": \"created by system\",\n    \"items\": [\n        {\n            \"product_id\": 265,\n            \"quantity\": 240\n        },\n        {\n            \"product_id\": 266,\n            \"quantity\": 310\n        },\n        {\n            \"product_id\": 267,\n            \"quantity\": 240\n        },\n        {\n            \"product_id\": 268,\n            \"quantity\": 240\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.omoeo.co/warehouse/add",
+							"protocol": "https",
+							"host": [
+								"api",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"warehouse",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**|**Default**\n|---|---|---|---|---\n|ticket_comment| |String|Describe ticket|\n|status|*|String|Status of ticket: `exported`, `imported`, `confirmed`|\n|ticket_type|*|String|Type of Ticket: `expected-produced`, `actual-produced`, `import`, `export`|\n|items|*|Array of Object <br><ul><li>product_id: String</li><li>quantity: Number</li></ul>| Detail of product|\n|parent_id| |Number|Id of `expected-produced` Ticket. This is required for the Ticket has type that is omit `expected-produced`|"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTg5ODc1OTAyLCJleHAiOjE1OTA0ODA3MDJ9.0xlUbnTjd6GnetLiEcPSjfjsENas-qnzkE_MXUAQDxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \t\"status\": \"completed\",\n   \t\"ticket_title\": \"yqiwyeuiqw\"\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/warehouse/edit/77",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"edit",
+								"77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAsInVzZXJuYW1lIjoidGFuaHAxNTA2LnNvY2lhbEBnbWFpbC5jb20iLCJydWxlX2lkIjoyLCJpYXQiOjE1ODIxNzU3NzEsImV4cCI6MTU4Mjc4MDU3MX0._1Y6jXmP2EZ2_k6ZvuqCP7osXuMVCH-0O0M19dzQMWQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/warehouse/remove/3",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"remove",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Warehouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTk2MTg2ODUxLCJleHAiOjE1OTY3OTE2NTF9.vq-eVsargEkkCciTjD3fpnyr1OyjzN9qj4lEm3sxf60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/warehouse/report?ignore_limit=1&product_code=lbf091",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"warehouse",
+								"report"
+							],
+							"query": [
+								{
+									"key": "ignore_limit",
+									"value": "1",
+									"description": "1 hoặc ko truyền gì hết, truyền 1 là trả về tất cả dữ liệu"
+								},
+								{
+									"key": "product_code",
+									"value": "lbf091"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FCM",
+			"item": [
+				{
+					"name": "Add Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\": 2,\n\t\"token\": \"fhdZdubr-iJexdDr1m1jGf:APA91bHBJYKhIRlF53JPDO6L0Tu9bju3brAn6uOTkcHttn5pmFyTUPIzb_csrNHKJevnnuWl0oIfoXmivtl8nLW4Szp5Xn4FfvTju7htNw8r4wut1c-cDgn9_mHYP_jZxswkBkD-vTbs\",\n\t\"user_type\": \"shipper\",\n\t\"notify_enabled\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/firebase/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"add"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**\n|---|---|---|---\n|user_id|*|Number|Owner of Token\n|token|*|String|Instance Id get from Firebase\n|user_type|*|String|This will be used as topic name\n|notify_enabled|*|Number| 1 or 0, 1 will enable notify"
+					},
+					"response": []
+				},
+				{
+					"name": "View Token Of User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/firebase/view/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"view",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Token",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"ashdahdjkahoqwieoqwe102839012ud\",\n\t\"subscribed_topics\": [\"coca\"],\n\t\"notify_enabled\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/firebase/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"edit"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**\n|---|---|---|---\n|token|*|String|Token to update\n|subscribed_topics| |Array of String|Topic name to subscribe\n|notify_enabled| |Number| 1 or 0, 1 will enable notify"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Token",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:12000/firebase/remove?token=ashdahdjkahoqwieoqwe102839012ud",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "ashdahdjkahoqwieoqwe102839012ud"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Topics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"eKlC-f25YXEY72KRJrUAvy:APA91bFHRebPY1Rub7zP1xllRX4oVB3Ea-qnexEBuM9DLwGegSzHESih-HHSEOLFoknrd-nokGgsIOt2yY0OXY3jLTocI92rbWWaL6DMlXWJF0ptaBOeVVsqk6_am9nJ70UJ1vLQ_hTO\",\n\t\"topics\": [\"accountant\", \"customer_care\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/firebase/subscribe",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"subscribe"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**\n|---|---|---|---\n|token|*|String|Instance ID\n|topics|*|Array of String|Array of topic will subscribe to"
+					},
+					"response": []
+				},
+				{
+					"name": "Unsubscribe Topics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"eKlC-f25YXEY72KRJrUAvy:APA91bFHRebPY1Rub7zP1xllRX4oVB3Ea-qnexEBuM9DLwGegSzHESih-HHSEOLFoknrd-nokGgsIOt2yY0OXY3jLTocI92rbWWaL6DMlXWJF0ptaBOeVVsqk6_am9nJ70UJ1vLQ_hTO\",\n\t\"topics\": [\"accountant\", \"customer_care\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/firebase/unsubscribe",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"firebase",
+								"unsubscribe"
+							]
+						},
+						"description": "BODY\n\n---\n\n|**Field**|**Required**|**Type**|**Description**\n|---|---|---|---\n|token|*|String|Instance ID\n|topics|*|Array of String|Array of topic will unsubscribe from"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Surcharge",
+			"item": [
+				{
+					"name": "List Surcharge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJnaGl0ZXRlQGdtYWlsLmNvbSIsInJ1bGVfaWQiOjEsImlhdCI6MTU5MzAwNDg0OCwiZXhwIjoxNTkzNjA5NjQ4fQ.yS15diY9iVV8MhAVSDio9I2Cdv0OaGecCmt7nEjQZCE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi-dev.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.omoeo.co/surcharge/list",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"omoeo",
+								"co"
+							],
+							"path": [
+								"surcharge",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Surcharge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyOTgzNTc0LCJleHAiOjE1OTM1ODgzNzR9.6HItG0F5UKXDxb7UnU42IzI1pklcokeCiNzx7lq9C1o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n     \"surcharge_name\": \"Nút Bếs\",\n      \"price\": 250\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:12000/surcharge/add",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"surcharge",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Surcharge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE5LCJ1c2VybmFtZSI6ImdoaXRldGVAZ21haWwuY29tIiwicnVsZV9pZCI6MSwiaWF0IjoxNTkyOTgzNTc0LCJleHAiOjE1OTM1ODgzNzR9.6HItG0F5UKXDxb7UnU42IzI1pklcokeCiNzx7lq9C1o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "http://lubi.omoeo.co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:12000/surcharge/remove/12",
+							"host": [
+								"localhost"
+							],
+							"port": "12000",
+							"path": [
+								"surcharge",
+								"remove",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
